@@ -40,6 +40,13 @@ body {
   vertical-align: middle;
 }
 
+@media (max-width:767px) {
+  .container {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -53,6 +60,7 @@ body {
 }
 
 .footer-dark {
+  background: var(--secondary);
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
@@ -146,8 +154,8 @@ link-divider {
 
 .features-boxed h2 {
   font-weight: bold;
-  margin-bottom: 0px;
-  padding-top: 0px;
+  margin-bottom: 40px;
+  padding-top: 40px;
   color: inherit;
 }
 
@@ -170,7 +178,7 @@ link-divider {
 }
 
 .features-boxed .features {
-  padding: 25px 0;
+  padding: 50px 0;
 }
 
 .features-boxed .item {
@@ -260,63 +268,4 @@ div#features:hover {
 .yeet {
   text-align: center;
   padding: 18px;
-}
-
-@media (max-width: 767px) {
-  .container {
-    padding: 15px;
-    margin: auto;
-    max-width: 100%;
-  }
-
-  header {
-    margin: 0;
-    padding: 20px 0;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  h1,
-  h2 {
-    font-size: 24px;
-  }
-
-  .description {
-    font-size: 14px;
-  }
-
-  .btn-group .btn {
-    padding: 12px 20px;
-  }
-
-  .features-boxed .features .item {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
-
-  .features-boxed .item .box {
-    padding: 10px;
-  }
-
-  .footer-dark .item.social>a {
-    font-size: 36px;
-    /* bigger icons for better tap targets */
-  }
-
-  .footer-links .footer-link-item {
-    margin-bottom: 10px;
-    /* space out links for better tap targets */
-  }
-
-  .footer-dark {
-    padding: 1rem 15px;
-  }
-}
-
-/* Fixing overflow issue on mobile */
-body {
-  overflow-x: hidden;
 }
