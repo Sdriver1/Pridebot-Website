@@ -19,6 +19,9 @@ app.get("/morbius", (req, res) =>
 app.get("/invite", (req, res) =>
   res.sendFile("invite.html", { root: __dirname })
 );
+app.get("/support", (req, res) =>
+  res.sendFile("support.html", { root: __dirname })
+);
 app.get("/partners", (req, res) =>
   res.sendFile("partners.html", { root: __dirname })
 );
