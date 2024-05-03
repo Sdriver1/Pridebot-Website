@@ -146,9 +146,6 @@
         Your Discord bot to LGBTQ Identities! Explore terms, definitions,
         resources, and more to be yourself.
       </p>
-      <p style="color: var(--secondary-text-color)">
-        <strong> :party_popper: 1 YEAR OF PRIDEBOT! :party_popper: 🎉</strong>
-      </p>
       <div class="tada animated">
         <div role="group" class="btn-group">
           <a
@@ -235,7 +232,7 @@
               />
               <h3 class="name">Trusted by Many</h3>
               <p class="description" style="color: var(--secondary-text-color)">
-                Used by 360+ communities and 45k+ users, Pridebot has earned
+                Used by 370+ communities and 45.7k+ users, Pridebot has earned
                 trust across many communities.<br />
               </p>
             </div>
@@ -283,8 +280,8 @@
             <div
               class="col-auto col-md-3 text-center pb-5 pt-5 number-item love_counter"
             >
-              <h1 class="love_count" style="font-size: 70px">
-                <strong>360</strong>
+              <h1 style="font-size: 70px" id="totalServers">
+                <strong>0</strong>
               </h1>
               <h4 style="color: var(--main-color); margin-top: -6px">
                 Total Servers
@@ -293,8 +290,8 @@
             <div
               class="col-auto col-md-3 text-center align-self-center pb-5 pt-5 love_counter"
             >
-              <h1 class="love_count" style="font-size: 70px">
-                <strong>45.1k+</strong>
+              <h1 style="font-size: 70px" id="totalUsers">
+                <strong>0</strong>
               </h1>
               <h4 style="color: var(--main-color); margin-top: -6px">
                 Total Users
@@ -303,8 +300,8 @@
             <div
               class="col-auto col-md-3 text-center align-self-center pb-5 pt-5 love_counter"
             >
-              <h1 class="love_count" style="font-size: 70px">
-                <strong>33</strong>
+              <h1 style="font-size: 70px" id="totalcommandsCount">
+                <strong>0</strong>
               </h1>
               <h4 style="color: var(--main-color); margin-top: -6px">
                 Command Count
@@ -313,8 +310,8 @@
             <div
               class="col-auto col-md-3 text-center align-self-center pb-5 pt-5 love_counter"
             >
-              <h1 class="love_count" style="font-size: 70px">
-                <strong>4.3k+</strong>
+              <h1 style="font-size: 70px" id="totalcommandUsage">
+                <strong>0</strong>
               </h1>
               <h4 style="color: var(--main-color); margin-top: -6px">
                 Commands Used
@@ -329,7 +326,7 @@
           <! --- If you want more just copy the following code from here -->
           <div class="accordion-item">
             <button id="accordion-button-1" aria-expanded="false">
-              <span class="accordion-title">Fun (4)</span
+              <span class="accordion-title">Fun (5)</span
               ><span class="icon" aria-hidden="true"></span>
             </button>
             <div class="accordion-content">
@@ -338,6 +335,9 @@
                 <br />
                 <strong>/lgbtq</strong> - Fun little command to show off the
                 LGBTQ commands
+                <br />
+                <strong>/nametester</strong> - Use this to try out new names for
+                yourself
                 <br />
                 <strong>/pronountester</strong> - Use this to try out new
                 pronouns for yourself
@@ -631,5 +631,6 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Counting.js"></script>
     <script src="assets/js/untitled.js"></script>
+    <script src="assets/js/botstats.js"></script>
   </body>
 </html>
