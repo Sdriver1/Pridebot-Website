@@ -7,7 +7,7 @@
     "path": "^0.12.7"
   },
   "scripts": {
-    "start": "node ./public/assets/js/server.js"
+    "start": "node ./public/assets/js/server.mjs"
   },
   "name": "pridebotweb",
   "version": "1.0.0",
