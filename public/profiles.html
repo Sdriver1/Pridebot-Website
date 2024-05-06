@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>API Requester</title>
+  </head>
+  <body>
+    <pre id="response"></pre>
+    <script>
+      function fetchProfile() {
+        const userId = window.location.pathname.split("/").pop();
+        const apiUrl = `https://api.pridebot.xyz/api/profiles/${userId}`;
+
+        fetch(apiUrl, {
+          method: "GET",
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            document.getElementById("response").textContent = JSON.stringify(
+              data,
+              null,
+              2
+            );
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            document.getElementById("response").textContent =
+              "Failed to load profile: " + error.message;
+          });
+      }
+
+      window.onload = fetchProfile;
+    </script>
+  </body>
+</html>
