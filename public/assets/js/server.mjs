@@ -13,7 +13,7 @@ const serveStatic = (route, directory) => {
 
 serveStatic("/assets/css", "../../assets/css");
 serveStatic("/assets/js", "../../assets/js");
-serveStatic("/assets/img", "../../assets/img");
+serveStatic("/assets/images", "../../assets/images");
 serveStatic("/assets/fonts", "../../assets/fonts");
 serveStatic("/assets/bootstrap", "../../assets/bootstrap");
 
@@ -32,7 +32,21 @@ const htmlRoutes = [
   { route: "/profiles/:userId", file: "../../profiles.html" },
 ];
 
-htmlRoutes.forEach(route => serveHTML(route.route, route.file));
+htmlRoutes.forEach((route) => serveHTML(route.route, route.file));
+
+app.get("/:imageName", (req, res) => {
+  const imageName = req.params.imageName;
+  const imagePath = join(__dirname, "../../assets/images", imageName);
+
+  fs.access(imagePath, fs.constants.F_OK, (err) => {
+    if (err) {
+      console.error(`Image not found: ${imagePath}`);
+      res.status(404).send("Image not found");
+    } else {
+      res.sendFile(imagePath);
+    }
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
