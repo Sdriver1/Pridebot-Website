@@ -1,6 +1,7 @@
 import express from "express";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
+import fs from "fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -8,9 +9,8 @@ const port = 3000;
 const app = express();
 
 const serveStatic = (route, directory) => {
-  app.use(route, express.static(join(__dirname, directory)));
+  app.use(route, express.static(join(__dirname, directory), { index: false }));
 };
-
 serveStatic("/assets/css", "../../assets/css");
 serveStatic("/assets/js", "../../assets/js");
 serveStatic("/assets/images", "../../assets/images");
@@ -38,6 +38,8 @@ app.get("/:imageName", (req, res) => {
   const imageName = req.params.imageName;
   const imagePath = join(__dirname, "../../assets/images", imageName);
 
+  console.log(`Requested image: ${imageName}`);
+  console.log(`Looking for image at: ${imagePath}`);
   fs.access(imagePath, fs.constants.F_OK, (err) => {
     if (err) {
       console.error(`Image not found: ${imagePath}`);
