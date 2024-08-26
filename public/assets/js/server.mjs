@@ -8,6 +8,9 @@ const __dirname = dirname(__filename);
 const port = 8081;
 const app = express();
 
+const serverStart = new Date();
+const serverStartformat = Math.floor(serverStart.getTime() / 1000); 
+
 const serveStatic = (route, directory) => {
   app.use(route, express.static(join(__dirname, directory), { index: false }));
 };
@@ -47,6 +50,14 @@ app.get("/:imageName", (req, res) => {
     } else {
       res.sendFile(imagePath);
     }
+  });
+});
+
+app.get("/api/serverstats", (req, res) => {
+  res.json({
+    message: "Server start time",
+    startTime: serverStart,
+    formatedStartTime: serverStartformat,
   });
 });
 
