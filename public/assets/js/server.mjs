@@ -33,6 +33,7 @@ const htmlRoutes = [
   { route: "/support", file: "../../support.html" },
   { route: "/partners", file: "../../partners.html" },
   { route: "/profiles/:userId", file: "../../profiles.html" },
+  { route: "/survey", file: "../../review.html" },
 ];
 
 htmlRoutes.forEach((route) => serveHTML(route.route, route.file));
