@@ -1,6 +1,6 @@
 async function fetchserverStats() {
   try {
-    const response = await fetch("https://api.pridebot.xyz/serverestats");
+    const response = await fetch("https://api.pridebot.xyz/serverstats");
     const data = await response.json();
     document.getElementById("prismacount").textContent =
       data.prismatotal.toLocaleString();
